@@ -1,5 +1,5 @@
+.cache
+.vscode
+*.pyc
 *.retry
 */__pycache__
-*.pyc
-.cache
-
