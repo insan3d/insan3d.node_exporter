@@ -8,7 +8,7 @@
   register: node_exporter_version_check
 
 - name: Obtain latest version
-  ignore_errors: "{{ ansible_check_mode }}"
+  when: not ansible_check_mode
   block:
     - name: Obtain latest version information
       when: node_exporter_version is match("latest") or node_exporter_version is not defined
