@@ -6,7 +6,7 @@
 Description=Node Exporter
 
 [Socket]
-ListenStream={{ node_exporter_host }}:{{ node_exporter_port }}
+ListenStream={{ node_exporter_host + ':' + node_exporter_port if node_exporter_host else node_exporter_port }}
 
 [Install]
 WantedBy=sockets.target
