@@ -1,0 +1,12 @@
+# {{ ansible_managed }}
+
+# /etc/systemd/system/node_exporter.socket: node_exporter socket unit file
+
+[Unit]
+Description=Node Exporter
+
+[Socket]
+ListenStream={{ node_exporter_host }}:{{ node_exporter_port }}
+
+[Install]
+WantedBy=sockets.target
